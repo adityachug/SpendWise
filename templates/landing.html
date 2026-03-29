@@ -1,26 +1,10 @@
-{% extends "base.html" %}
+ {% extends "base.html" %}
 
 {% block title %}Spendly — Track Every Rupee{% endblock %}
 
 {% block content %}
 
 <section class="hero">
-    <div class="hero-inner">
-        <div class="hero-badge">Personal Finance Tracker</div>
-        <h1 class="hero-title">
-            Know where your<br>
-            <em>money goes</em>
-        </h1>
-        <p class="hero-subtitle">
-            Log expenses, understand your spending patterns,
-            and take control of your financial life —
-            one transaction at a time.
-        </p>
-        <div class="hero-actions">
-            <a href="{{ url_for('register') }}" class="btn-primary">Start tracking free</a>
-            <a href="{{ url_for('login') }}" class="btn-ghost">Sign in</a>
-        </div>
-    </div>
     <div class="hero-visual">
         <div class="mock-card">
             <div class="mock-card-header">
@@ -59,7 +43,38 @@
             </div>
         </div>
     </div>
+    <div class="hero-inner">
+        <div class="hero-badge">Personal Finance Tracker</div>
+        <h1 class="hero-title">
+            Know where your<br>
+            <em>money goes</em>
+        </h1>
+        <p class="hero-subtitle">
+            Log expenses, understand your spending patterns,
+            and take control of your financial life —
+            one transaction at a time.
+        </p>
+        <div class="hero-actions">
+            <a href="{{ url_for('register') }}" class="btn-primary">Start tracking free</a>
+            <a href="{{ url_for('login') }}" class="btn-ghost">Sign in</a>
+            <button type="button" class="btn-video" id="openVideoBtn">See how it works</button>
+        </div>
+    </div>
 </section>
+
+<!-- Video Modal -->
+<div class="modal-overlay" id="videoModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeModalBtn" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="video-container">
+            <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
 
 <section class="features">
     <div class="features-inner">
